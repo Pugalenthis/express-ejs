@@ -12,7 +12,7 @@ stages{
     stage ("Deploy to Production"){
         steps {
             sh '''
-            sudo  ssh -i  /home/ubuntu/.ssh/id_rsa ubuntu@${express-ejs}
+            ssh -i  /home/ubuntu/.ssh/id_rsa ubuntu@${express-ejs}
             cd /var/www/express-ejs
             git pull origin main
             node index.js
