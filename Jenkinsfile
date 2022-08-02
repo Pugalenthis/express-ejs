@@ -9,18 +9,15 @@ pipeline {
      }
 
 stages{
-
-        stage ('Deployments'){
-                stage ("Deploy to Production"){
-                    steps {
-                        sh '''
-                        ssh -i  /home/ubuntu/.ssh/id_rsa.pub ubuntu@${express-ejs}
-                        cd /var/www/express-ejs
-                        git pull origin main
-                        node index.js
-                        '''
-                    }
-                }
+    stage ("Deploy to Production"){
+        steps {
+            sh '''
+            ssh -i  /home/ubuntu/.ssh/id_rsa.pub ubuntu@${express-ejs}
+            cd /var/www/express-ejs
+            git pull origin main
+            node index.js
+            '''
+            }
             
         }
     }
