@@ -11,12 +11,11 @@ pipeline {
 stages{
     stage ("Deploy to Production"){
         steps {
-            sh "
-            '''
+            sh '''
             cd /var/www/express-ejs
             git pull origin main
             '''
-            "
+            
             }
             
         }
