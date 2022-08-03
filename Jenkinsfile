@@ -14,11 +14,10 @@ stages{
             sh script:'''
                 #!/bin/bash
                 echo "This is start $(pwd)"
-                sudo cd /var/www/express-ejs
+                cd express-ejs
                 echo "This is start $(pwd)"
                 git pull origin main
             '''
-            
             }
             
         }
