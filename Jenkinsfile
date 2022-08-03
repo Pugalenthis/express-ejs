@@ -12,6 +12,7 @@ stages{
     stage ("Deploy to Production"){
         steps {
             sh '''
+                echo $(pwd)
                 sudo cd /var/www/express-ejs
                 git pull origin main
 
