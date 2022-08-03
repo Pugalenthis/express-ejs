@@ -11,7 +11,7 @@ pipeline {
 stages{
     stage ("Deploy to Production"){
         steps {
-            echo "pugalenthi"
+            touch "jaya.html"
             }
             
         }
