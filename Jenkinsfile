@@ -11,7 +11,12 @@ pipeline {
 stages{
     stage ("Deploy to Production"){
         steps {
-            sh "touch jaya.html"
+            sh "
+            '''
+            cd /var/www/express-ejs
+            git pull origin main
+            '''
+            "
             }
             
         }
