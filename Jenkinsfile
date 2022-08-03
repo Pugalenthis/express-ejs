@@ -12,8 +12,9 @@ stages{
     stage ("Deploy to Production"){
         steps {
             sh '''
-            cd /var/www/express-ejs
-            git pull origin main
+                cd /var/www/express-ejs
+                git pull origin main
+
             '''
             
             }
