@@ -11,7 +11,7 @@ pipeline {
 stages{
     stage ("Deploy to Production"){
         steps {
-            touch jaya.html
+            sh "touch jaya.html"
             }
             
         }
