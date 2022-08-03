@@ -11,11 +11,12 @@ pipeline {
 stages{
     stage ("Deploy to Production"){
         steps {
-            sh '''
-                echo $(pwd)
+            sh script:'''
+                #!/bin/bash
+                echo "This is start $(pwd)"
                 sudo cd /var/www/express-ejs
+                echo "This is start $(pwd)"
                 git pull origin main
-
             '''
             
             }
