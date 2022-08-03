@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-         string(name: 'express-ejs', defaultValue: '65.0.103.136', description: 'Staging Server')
+         string(name: 'express-ejs', defaultValue: '52.66.205.55', description: 'Staging Server')
     }
 
     triggers {
