@@ -11,13 +11,7 @@ pipeline {
 stages{
     stage ("Deploy to Production"){
         steps {
-            sh script:'''
-                #!/bin/bash
-                echo "This is start $(pwd)"
-                cd express-ejs
-                echo "This is start $(pwd)"
-                git pull origin main
-            '''
+            sh "touch index.html"
             }
             
         }
