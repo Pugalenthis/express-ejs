@@ -41,6 +41,7 @@ stages{
                     sh """
                     #!/bin/bash
                     ssh  -i .ssh/id_rsa ubuntu@13.235.103.64 << EOF
+                    lsof -t -i:8080 | xargs kill -9
                     cd express-ejs 
                     node index.js
                     exit 0
