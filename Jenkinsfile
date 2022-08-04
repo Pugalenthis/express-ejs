@@ -3,7 +3,6 @@ pipeline {
     triggers {
          pollSCM('* * * * *')
      }
-
 stages{
     stage ("PULLING SOURCE CODE"){
         steps {
