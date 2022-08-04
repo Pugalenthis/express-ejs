@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters { 
-         string(name: 'IP_ADDRESS', defaultValue: '35.166.210.154', description: 'Staging Server')
+         string(name: 'IP_ADDRESS', defaultValue: '13.235.103.64', description: 'Staging Server')
     } 
     triggers {
          pollSCM('* * * * *')
