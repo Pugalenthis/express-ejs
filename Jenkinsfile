@@ -14,7 +14,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/id_rsa ubuntu@13.235.103.64 << EOF
+                    ssh  -i .ssh/id_rsa ubuntu@${express-ejs} << EOF
                     cd express-ejs
                     git pull origin main 
                     exit 0
@@ -29,7 +29,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/id_rsa ubuntu@13.235.103.64 << EOF
+                    ssh  -i .ssh/id_rsa ubuntu@${express-ejs} << EOF
                     cd express-ejs
                     npm install
                     exit 0
@@ -44,7 +44,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/id_rsa ubuntu@13.235.103.64 << EOF
+                    ssh  -i .ssh/id_rsa ubuntu@${express-ejs} << EOF
                     cd express-ejs 
                     node index.js
                     exit 0
