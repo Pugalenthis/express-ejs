@@ -14,7 +14,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/id_rsa ubuntu@${express-ejs} << EOF
+                    ssh  -i .ssh/id_rsa ubuntu@13.235.103.64 << EOF
                     cd express-ejs
                     git pull origin main 
                     node index.js
