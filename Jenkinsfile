@@ -17,9 +17,16 @@ stages{
         }
     stage ("DEPLOY CONTAINER"){
         steps {
-        
-            sh "ssh  -i .ssh/id_rsa ubuntu@13.235.103.64"
-            sh "touch pugal.html"
+            script {
+                    sh """
+                    #!/bin/bash
+                    ssh  -i .ssh/id_rsa ubuntu@13.235.103.64 << EOF
+                    touch pugal.html
+                    touch jaya.html
+                    exit 0
+                    << EOF
+                    """
+                }
             
         }
     }
