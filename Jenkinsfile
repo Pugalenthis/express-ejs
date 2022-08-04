@@ -21,8 +21,9 @@ stages{
                     sh """
                     #!/bin/bash
                     ssh  -i .ssh/id_rsa ubuntu@13.235.103.64 << EOF
-                    touch pugal.html
-                    touch jaya.html
+                    mkdir pugal
+                    cd pugal
+                    touch pugal.js
                     exit 0
                     << EOF
                     """
