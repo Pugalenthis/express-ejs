@@ -12,7 +12,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/id_rsa ubuntu@'${params.ip-address}' << EOF
+                    ssh  -i .ssh/id_rsa ubuntu@"${params.ip-address}" << EOF
                     cd express-ejs
                     git pull origin main 
                     exit 0
@@ -27,7 +27,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/id_rsa ubuntu@'${params.ip-address}' << EOF
+                    ssh  -i .ssh/id_rsa ubuntu@"${params.ip-address}" << EOF
                     cd express-ejs
                     npm install
                     exit 0
@@ -42,7 +42,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/id_rsa ubuntu@'${params.ip-address}' << EOF
+                    ssh  -i .ssh/id_rsa ubuntu@"${params.ip-address}" << EOF
                     lsof -t -i:8080 | xargs kill -9
                     cd express-ejs 
                     forever start index.js 
