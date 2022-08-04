@@ -21,7 +21,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    sudo ssh -o ConnectTimeout=30 -i /var/lib/jenkins/.ssh/id_rsa ubuntu@13.235.103.64 << EOF
+                    sudo ssh -o ConnectTimeout=30 -i .ssh/id_rsa ubuntu@13.235.103.64 << EOF
                     echo '$(pwd)'
                     exit 0
                     << EOF
