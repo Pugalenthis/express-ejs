@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters { 
-         string(name: 'IP_ADDRESS', defaultValue: '13.235.103.64', description: 'Staging Server')
+         string(name: 'IP_ADDRESS', defaultValue: '43.205.135.49', description: 'Staging Server')
     } 
     triggers {
          pollSCM('* * * * *')
@@ -12,7 +12,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/id_rsa ubuntu@"${params.IP_ADDRESS}" << EOF
+                    ssh  -i .ssh/ejs-jenkinns ubuntu@"${params.IP_ADDRESS}" << EOF
                     cd express-ejs
                     git pull origin main 
                     exit 0
@@ -27,7 +27,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/id_rsa ubuntu@"${params.IP_ADDRESS}" << EOF
+                    ssh  -i .ssh/ejs-jenkinns ubuntu@"${params.IP_ADDRESS}" << EOF
                     cd express-ejs
                     npm install
                     exit 0
@@ -42,7 +42,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/id_rsa ubuntu@"${params.IP_ADDRESS}" << EOF
+                    ssh  -i .ssh/ejs-jenkinns ubuntu@"${params.IP_ADDRESS}" << EOF
                     lsof -t -i:8080 | xargs kill -9
                     cd express-ejs 
                     forever start index.js 
