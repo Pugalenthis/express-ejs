@@ -12,7 +12,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/ejs-jenkinns ubuntu@"${params.IP_ADDRESS}" << EOF
+                    ssh  -i /var/lib/jenkins/.ssh/ejs-jenkinns ubuntu@"${params.IP_ADDRESS}" << EOF
                     cd express-ejs
                     git pull origin main 
                     exit 0
@@ -27,7 +27,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/ejs-jenkinns ubuntu@"${params.IP_ADDRESS}" << EOF
+                    ssh  -i /var/lib/jenkins/.ssh/ejs-jenkinns ubuntu@"${params.IP_ADDRESS}" << EOF
                     cd express-ejs
                     npm install
                     exit 0
@@ -42,7 +42,7 @@ stages{
             script {
                     sh """
                     #!/bin/bash
-                    ssh  -i .ssh/ejs-jenkinns ubuntu@"${params.IP_ADDRESS}" << EOF
+                    ssh  -i /var/lib/jenkins/.ssh/ejs-jenkinns ubuntu@"${params.IP_ADDRESS}" << EOF
                     lsof -t -i:8080 | xargs kill -9
                     cd express-ejs 
                     forever start index.js 
