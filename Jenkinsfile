@@ -16,10 +16,10 @@ stages{
                     cd express-ejs
                     git pull origin main 
                     exit 0
-                    << EOF
+                    EOF
                     """
                 }
-            
+ 
         }
     }
     stage ("INSTALLING DEPENDENCIES"){
@@ -31,7 +31,7 @@ stages{
                     cd express-ejs
                     npm install
                     exit 0
-                    << EOF
+                    EOF
                     """
                 }
             
@@ -47,7 +47,7 @@ stages{
                     cd express-ejs 
                     forever start index.js 
                     exit 0
-                    << EOF
+                    EOF
                     """
                 }
             
